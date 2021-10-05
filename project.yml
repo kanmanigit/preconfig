@@ -1,0 +1,39 @@
+## AWX connection settings
+tower_protocol: http
+tower_host: localhost:8080
+#tower_protocol: https
+#tower_host: localhost:8443
+awx_ssl_verify: false
+
+ansible_python_interpreter: "/usr/bin/env python3"
+
+## SCM Credential
+github_credential_name: "Kanmanigit "
+github_credential_username: "Kanmanigit "
+github_credential_password: "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"
+
+## AWX Authentication
+awx_admin_user: admin
+awx_admin_password: password
+
+#ro_username: mre
+
+## Read only users team name
+#ro_teamname: monitoring
+
+## Default organization to be used for all roles of this playbook
+awx_organization: Default
+
+
+
+
+
+  
+
+
+
+
+
+
+
+

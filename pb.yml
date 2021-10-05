@@ -1,0 +1,26 @@
+---
+- hosts:
+    - localhost
+  gather_facts: false
+  collections:
+    - awx.awx
+  vars:
+    mysecret_var: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          64396538633463386530363534323735383734663137373765343439393736613032326166613462
+          6666343963646537376633303936656661333131653566310a626632373264663335323739353564
+          32643931353730336336663662303634313166616264313539633738353462666562636165623139
+          3937313462646561640a636339323664383961353439623831623231343538383630636136313630
+          38653466373566626531333638643932646662616366626332656562363136343837
+  tasks:
+     -   name: create project
+         tower_project:
+         description: "Storage open/close report Project"
+         organization: "{{ awx_organization }}"
+         scm_clean: true
+         scm_update_on_launch: true
+         scm_delete_on_update: true
+         scm_update_cache_timeout: 1
+         scm_type: Git
+         scm_url: "https://github.com/kanmanigit/vault_proj"
+         scm_credential: kanmanigit
